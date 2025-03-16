@@ -1,25 +1,25 @@
-!DOCTYPE html
-html lang=zh
-head
-    meta charset=UTF-8
-    meta name=viewport content=width=device-width, initial-scale=1.0
-    title阅后即焚图片title
-    style
-        body { text-align center; font-family Arial, sans-serif; }
-        #preview { max-width 100%; margin-top 20px; }
-        #timer { font-size 18px; color red; }
-    style
-head
-body
-    h2阅后即焚图片h2
-    p id=timer图片将在 5 秒后销毁...p
-    img id=preview src=your-image.jpg
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>阅后即焚图片</title>
+    <style>
+        body { text-align: center; font-family: Arial, sans-serif; }
+        #preview { max-width: 100%; margin-top: 20px; }
+        #timer { font-size: 18px; color: red; }
+    </style>
+</head>
+<body>
+    <h2>阅后即焚图片</h2>
+    <p id="timer">图片将在 5 秒后销毁...</p>
+    <img id="preview" src="your-image.jpg">
     
-    script
-        setTimeout(() = {
+    <script>
+        setTimeout(() => {
             document.getElementById('preview').style.display = 'none';
             document.getElementById('timer').innerText = '图片已销毁！';
         }, 5000);
-    script
-body
-html
+    </script>
+</body>
+</html>
