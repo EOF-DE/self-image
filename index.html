@@ -16,10 +16,16 @@
     <img id="preview" src="your-image.jpg">
     
     <script>
-        setTimeout(() => {
-            document.getElementById('preview').style.display = 'none';
-            document.getElementById('timer').innerText = '图片已销毁！';
-        }, 5000);
+        // 检查用户是否已经访问过
+        if (localStorage.getItem('imageViewed')) {
+            document.body.innerHTML = '<h2>图片已销毁，无法再次查看！</h2>';
+        } else {
+            setTimeout(() => {
+                document.getElementById('preview').style.display = 'none';
+                document.getElementById('timer').innerText = '图片已销毁！';
+                localStorage.setItem('imageViewed', 'true'); // 标记已查看
+            }, 5000);
+        }
     </script>
 </body>
 </html>
